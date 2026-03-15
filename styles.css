@@ -1,7 +1,7 @@
 /* Variables de Color */
 :root {
-    --primary-color: #6B46C1;
-    --secondary-color: #EC4899;
+    --primary-color: #1e3a8a;
+    --secondary-color: #ec4899;
     --accent-color: #10B981;
     --dark-bg: #1F2937;
     --light-bg: #F9FAFB;
@@ -54,7 +54,12 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
 }
 
 .logo h1 {
@@ -167,6 +172,122 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
+}
+
+/* Sección Videos Introductorios */
+.videos-intro {
+    padding: 80px 20px;
+    background-color: var(--light-bg);
+}
+
+.videos-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.video-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-item p {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Sección Perfiles */
+.perfiles {
+    padding: 80px 20px;
+}
+
+.perfiles h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.perfil-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.perfil-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.perfil-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 2rem;
+}
+
+.perfil-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.perfil-content {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.perfil-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.perfil-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.perfil-videos video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Sección About */
@@ -466,7 +587,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
 /* Footer */
@@ -522,6 +643,14 @@ body {
     .steps {
         grid-template-columns: 1fr;
     }
+
+    .perfil-content {
+        grid-template-columns: 1fr;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -536,7 +665,9 @@ body {
     .about h2,
     .gallery h2,
     .how-it-works h2,
-    .contact h2 {
+    .contact h2,
+    .perfiles h2,
+    .videos-intro h2 {
         font-size: 1.8rem;
     }
 
@@ -546,5 +677,9 @@ body {
 
     .nav-links a {
         font-size: 0.9rem;
+    }
+
+    .perfil-header h3 {
+        font-size: 1.2rem;
     }
 }
